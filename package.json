@@ -16,6 +16,8 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@turf/bbox": "^6.5.0",
+    "@turf/distance": "^6.5.0",
     "phaser": "^3.60.0"
   }
 }
