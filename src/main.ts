@@ -8,26 +8,18 @@ class MainScene extends Scene {
   async create() {
     let buildings = await getMapspaceBuildings();
 
-    this.textbox = this.add.text(
-      window.innerWidth / 2,
-      window.innerHeight / 2,
-      "Hello " + buildings.length,
-      {
-        color: "red",
-        fontSize: "50px",
-      },
-    );
-
-    this.textbox.setOrigin(0.5, 0.5);
+    for (let polygon of buildings) {
+      this.add.polygon(0, 0, polygon, "0x6666ff");
+    }
   }
 
-  update(_time: number, delta: number) {
+  /*update(_time: number, delta: number) {
     if (!this.textbox) {
       return;
     }
 
     this.textbox.rotation += 0.005 * delta;
-  }
+  }*/
 }
 
 const config: Phaser.Types.Core.GameConfig = {

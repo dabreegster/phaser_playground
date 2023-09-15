@@ -8,9 +8,8 @@ export async function getMapspaceBuildings() {
 
   // TODO Is there really no package to do something like this?
   let [x1, y1, x2, y2] = bbox(gj);
-  let width = distanceKm([x1, y1], [x2, y1]);
-  let height = distanceKm([x1, y1], [x1, y2]);
-  console.log({ width, height });
+  let width = distanceKm([x1, y1], [x2, y1]) * 1000;
+  let height = distanceKm([x1, y1], [x1, y2]) * 1000;
 
   let polygons = [];
   for (let f of gj.features) {
